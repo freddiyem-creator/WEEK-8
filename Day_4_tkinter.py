@@ -24,7 +24,7 @@ def configure_window():
     pp_box.insert(0, f'Latitude: {lat}, Longitude: {lon}')
     def show():
         frame.pack(pady=10)
-    def hide():
+    def hide_logged_positions():
         frame.pack_forget()
     def click_Check():
         new_lon = Day_4_Api.get_iss_position()['longitude']
@@ -35,7 +35,7 @@ def configure_window():
     check_pos.pack(pady=10)
     display_position_button = tk.Button(root, text='Display logged positions', command=show)
     display_position_button.pack(pady=10)
-    hide_position_button = tk.Button(root, text='Hide logged positions', command=hide)
+    hide_position_button = tk.Button(root, text='Hide logged positions', command=hide_logged_positions)
     hide_position_button.pack(pady=10)
     root.config(bg='light blue')
     root.mainloop()
